@@ -13,6 +13,9 @@
     <section if="windows">
         <include name="${haxelib:HxWebView}/internal/vendor/windows.xml"/>
 
+        <assets path="internal/windows/arm64/" rename="" if="HXCPP_ARM64" unless="HXCPP_M64" exclude="WebView2Loader.dll.lib" />
+        <assets path="internal/windows/EBWebView/arm64/" rename="EBWebView/arm64/" if="HXCPP_ARM64" unless="HXCPP_M64" />
+
         <assets path="internal/windows/x64/" rename="" unless="HXCPP_M32" exclude="WebView2Loader.dll.lib" />
         <assets path="internal/windows/EBWebView/x64/" rename="EBWebView/x64/" unless="HXCPP_M32" />
 
