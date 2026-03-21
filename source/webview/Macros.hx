@@ -14,9 +14,9 @@ class Macros
     // This macro will only run on Windows targets to copy over the EmbeddedBrowserWebView DLL
     macro public static function copyDLLs():Array<Field>
     {
-        var libDir:String = Path.directory(FileSystem.fullPath(Context.currentPos().getInfos().file)); // HxWebView/source/webview
-        libDir = Path.directory(libDir); // HxWebView/source
-        libDir = Path.directory(libDir); // HxWebView
+        var libDir:String = Path.directory(FileSystem.fullPath(Context.currentPos().getInfos().file)); // hxwebview/source/webview
+        libDir = Path.directory(libDir); // hxwebview/source
+        libDir = Path.directory(libDir); // hxwebview
 
         Context.onAfterGenerate(() ->
         {

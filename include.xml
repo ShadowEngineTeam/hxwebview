@@ -7,11 +7,11 @@
     </section>
 
     <section if="linux">
-        <include name="${haxelib:HxWebView}/internal/vendor/linux.xml"/>
+        <include name="${haxelib:hxwebview}/internal/vendor/linux.xml"/>
     </section>
 
     <section if="windows">
-        <include name="${haxelib:HxWebView}/internal/vendor/windows.xml"/>
+        <include name="${haxelib:hxwebview}/internal/vendor/windows.xml"/>
 
         <assets path="internal/windows/arm64/" rename="" if="HXCPP_ARM64" unless="HXCPP_M64" exclude="WebView2Loader.dll.lib" />
         <assets path="internal/windows/EBWebView/arm64/" rename="EBWebView/arm64/" if="HXCPP_ARM64" unless="HXCPP_M64" />
@@ -24,13 +24,13 @@
     </section>
 
     <files id="haxe">
-        <compilerflag value="-I${haxelib:HxWebView}/internal/webview" />
-        <compilerflag value="-I${haxelib:HxWebView}" />
+        <compilerflag value="-I${haxelib:hxwebview}/internal/webview" />
+        <compilerflag value="-I${haxelib:hxwebview}" />
     </files>
 
     <files id="__main__">
-        <compilerflag value="-I${haxelib:HxWebView}/internal/webview" />
-        <compilerflag value="-I${haxelib:HxWebView}" />
+        <compilerflag value="-I${haxelib:hxwebview}/internal/webview" />
+        <compilerflag value="-I${haxelib:hxwebview}" />
     </files>
 
 </xml>

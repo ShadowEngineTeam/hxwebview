@@ -7,7 +7,7 @@
 -D no-deprecation-warnings
 -D no-console
 
---library HxWebView
+--library hxwebview
 
 --class-path source
 --main Bind

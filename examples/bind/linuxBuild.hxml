@@ -8,7 +8,7 @@
 -D no-console
 -D NO_PRECOMPILED_HEADERS
 
---library HxWebView
+--library hxwebview
 
 --class-path source
 --main Bind
