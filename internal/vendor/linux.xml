@@ -47,7 +47,7 @@
         <compilerflag value="-I/usr/include/libsoup-3.0" />
         <compilerflag value="-I/usr/include/glib-2.0" />
         <compilerflag value="-I/usr/lib/glib-2.0/include" />
-        <compilerflag value="-I/usr/lib/aarch64-linux-gnu/glib-2.0/include" if="HXCPP_ARM64" unless="HXCPP_M64" />
+        <compilerflag value="-I/usr/lib/aarch64-linux-gnu/glib-2.0/include" if="HXCPP_ARM64" />
         <compilerflag value="-I/usr/lib/x86_64-linux-gnu/glib-2.0/include" if="HXCPP_M64" unless="HXCPP_ARM64" />
         <compilerflag value="-I/usr/lib/arm-linux-gnueabihf/glib-2.0/include" if="HXCPP_ARMV7" unless="HXCPP_ARM64 || HXCPP_M64" />
         <compilerflag value="-I/usr/lib/i386-linux-gnu/glib-2.0/include" unless="HXCPP_ARM64 || HXCPP_ARMV7 || HXCPP_M64" />
