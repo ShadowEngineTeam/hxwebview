@@ -39,6 +39,10 @@ class WebView
      */
     public function new(debug:Bool = false, ?window:WindowPtr)
     {
+        #if linux
+        Sys.putEnv("WEBKIT_DISABLE_COMPOSITING_MODE", "1");
+        #end
+
         handle = WVExterns.webview_create(debug ? 1 : 0, window);
 
         if (handle == null)
