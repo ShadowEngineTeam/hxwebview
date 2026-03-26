@@ -8,8 +8,8 @@ import webview.WebView;
 @:keep
 @:noPrivateAccess
 @:allow(webview.WebView)
-@:buildXml('<include name="${haxelib:hxwebview}/include.xml" />')
-@:include('internal/imports.h')
+@:buildXml('<include name="${haxelib:hxwebview}/project/Build.xml" />')
+@:include('imports.h')
 extern class WVExterns
 {
     @:native('webview_create')
