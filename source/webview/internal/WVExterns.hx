@@ -39,7 +39,7 @@ extern class WVExterns
     private static function webview_set_title(w:WindowPtr, title:ConstCharStar):Void;
 
     @:native('webview_set_size')
-    private static function webview_set_size(w:WindowPtr, width:Int, height:Int, hints:WebViewSizeHint):Void;
+    private static function webview_set_size(w:WindowPtr, width:Int, height:Int, hints:WebView_Hint_T):Void;
 
     @:native('webview_navigate')
     private static function webview_navigate(w:WindowPtr, url:ConstCharStar):Void;
@@ -68,3 +68,30 @@ extern class WVExterns
     @:native('hx_webview_version')
     private static function webview_version():WebViewInfo;
 }
+
+extern enum abstract WebView_Hint_T(WebView_Hint_T_Impl)
+{
+	@:native('WEBVIEW_HINT_NONE')
+	var NONE;
+
+	@:native('WEBVIEW_HINT_MIN')
+	var MIN;
+
+	@:native('WEBVIEW_HINT_MAX')
+	var MAX;
+
+	@:native('WEBVIEW_HINT_FIXED')
+	var FIXED;
+
+	@:from
+	static public inline function fromInt(i:Int):WebView_Hint_T
+		return cast i;
+
+	@:to extern public inline function toInt():Int
+		return untyped this;
+}
+
+@:buildXml('<include name="${haxelib:hxwebview}/project/Build.xml" />')
+@:include('webview/types.h')
+@:native('webview_hint_t')
+private extern class WebView_Hint_T_Impl {}

@@ -1,0 +1,4 @@
+[submodule "project/webview"]
+	path = project/webview
+	url = https://github.com/webview/webview
+	shallow = true

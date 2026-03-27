@@ -1,7 +1,7 @@
 #include <hxcpp.h>
 #include <hxString.h>
 #include <string>
-#include "./vendor/webview.h"
+#include "webview.h"
 
 #if defined(_WIN32)
 #include <windef.h>

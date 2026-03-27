@@ -8,6 +8,7 @@ import cpp.Void as CVoid;
 #if (!display && windows)
 @:build(webview.Macros.copyDLLs())
 #end
+@:unreflective
 class WebView
 {
     private var handle:Null<WindowPtr> = null;
@@ -150,7 +151,7 @@ class WebView
      * 
      * See WebViewSizeHint enum.
      */
-    public function setSize(width:Int, height:Int, hints:WebViewSizeHint):Void
+    public function setSize(width:Int, height:Int, hints:WebView_Hint_T):Void
     {
         if (handle == null || width <= 0 && height <= 0)
             return;
@@ -310,15 +311,6 @@ typedef WebViewInfo =
     var pre_release:String;
     // SemVer 2.0.0 build metadata prefixed with "+", otherwise an empty string.
     var build_metadata:String;
-}
-
-// Window size hints
-enum abstract WebViewSizeHint(Int) to Int from Int
-{
-    var NONE = 0;
-    var MIN = 1;
-    var MAX = 2;
-    var FIXED = 3;
 }
 
 // Native handle kind. The actual type depends on the backend.

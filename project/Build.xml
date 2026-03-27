@@ -3,24 +3,31 @@
     <pragma once="true" />
 
 	<set name="PROJECT_DIR" value="${haxelib:hxwebview}/project" />
+	<set name="WEBVIEW_DIR" value="${haxelib:hxwebview}/project/webview/core" />
 
     <section id="vars">
         <set name="NO_PRECOMPILED_HEADERS" value="1" if="linux" />
     </section>
 
     <section if="linux">
-        <include name="${PROJECT_DIR}/vendor/linux.xml"/>
+        <include name="${PROJECT_DIR}/libs/linux.xml"/>
     </section>
 
     <section if="windows">
-        <include name="${PROJECT_DIR}/vendor/windows.xml"/>
+        <include name="${PROJECT_DIR}/libs/windows.xml"/>
     </section>
 
     <files id="haxe">
-        <compilerflag value="-I${PROJECT_DIR}/" />
+        <compilerflag value="-I${PROJECT_DIR}/include" />
+        <compilerflag value="-I${WEBVIEW_DIR}/include" />
     </files>
 
     <files id="__main__">
-        <compilerflag value="-I${PROJECT_DIR}/" />
+        <compilerflag value="-I${PROJECT_DIR}/include" />
+        <compilerflag value="-I${WEBVIEW_DIR}/include" />
     </files>
+
+    <target id="haxe">
+        <file name="${PROJECT_DIR}/src/WebViewHelper.cpp" />
+    </target>
 </xml>
