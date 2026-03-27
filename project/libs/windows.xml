@@ -2,6 +2,20 @@
 
     <set name="PROJECT_DIR" value="${haxelib:hxwebview}/project" />
 
+    <target id="haxe">
+        <section if="HXCPP_M64">
+            <lib name="${PROJECT_DIR}/windows/x64/WebView2LoaderStatic.lib" />
+        </section>
+
+        <section if="HXCPP_M32">
+            <lib name="${PROJECT_DIR}/windows/x86/WebView2LoaderStatic.lib" />
+        </section>
+
+        <section if="HXCPP_ARM64">
+            <lib name="${PROJECT_DIR}/windows/arm64/WebView2LoaderStatic.lib" />
+        </section>
+    </target>
+
     <files id="haxe">
         <compilerflag value="-I${PROJECT_DIR}/windows" />
     </files>
@@ -9,25 +23,4 @@
     <files id="__main__">
         <compilerflag value="-I${PROJECT_DIR}/windows" />
     </files>
-
-    <target id="haxe">
-        <section if="HXCPP_M64">
-            <lib name="${PROJECT_DIR}/windows/x64/WebView2Loader.dll.lib" />
-        </section>
-
-        <section if="HXCPP_M32">
-            <lib name="${PROJECT_DIR}/windows/x86/WebView2Loader.dll.lib" />
-        </section>
-    </target>
-
-    <section if="HXCPP_M64">
-        <copyFile name="WebView2Loader.dll" from="${PROJECT_DIR}/windows/x64" toolId="exe"
-            overwrite="true" />
-    </section>
-
-    <section if="HXCPP_M32">
-        <copyFile name="WebView2Loader.dll" from="${PROJECT_DIR}/windows/x86" toolId="exe"
-            overwrite="true" />
-    </section>
-
 </xml>
