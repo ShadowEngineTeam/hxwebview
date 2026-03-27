@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<pragma once="true" />
+
+	<target id="haxe">
+		<vflag name="-framework" value="WebKit" />
+        <lib name="-ldl" />
+
+	</target>
+</xml>
