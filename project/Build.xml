@@ -17,6 +17,11 @@
         <include name="${PROJECT_DIR}/libs/windows.xml"/>
     </section>
 
+    <section if="macos">
+        <include name="${PROJECT_DIR}/libs/mac.xml"/>
+    </section>
+
+
     <files id="haxe">
         <compilerflag value="-I${PROJECT_DIR}/include" />
         <compilerflag value="-I${WEBVIEW_DIR}/include" />
